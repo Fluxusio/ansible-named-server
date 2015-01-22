@@ -1,3 +1,8 @@
 ---
 - hostname: name={{ inventory_hostname }}
   sudo: yes
+
+- replace: dest=/home/ubuntu/.bashrc backup=yes regexp='#force_color_prompt=yes' replace='force_color_prompt=yes'
+
+- replace: dest=/home/ubuntu/.bashrc backup=yes regexp='\\u@\\h' replace='\u@\\H'
+
